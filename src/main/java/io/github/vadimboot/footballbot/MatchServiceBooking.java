@@ -119,14 +119,13 @@ public class MatchServiceBooking {
     }
 
     private void addUser(List<FootballUser> users, FootballUser newUser) {
-        if (users.stream().noneMatch(u -> u.getId().equals(newUser.getId()) ||
-                u.getUserName().equals(newUser.getUserName()))) {
+        if (users.stream().noneMatch(u -> u.equals(newUser))) {
             users.add(newUser);
         }
     }
 
     private void removeUser(List<FootballUser> users, FootballUser user) {
-        users.removeIf(u -> u.getId().equals(user.getId()) || u.getUserName().equals(user.getUserName()));
+        users.removeIf(u -> u.equals(user));
     }
 
     private String userToString(FootballUser user) {

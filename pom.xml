@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>io.github.vadimboot</groupId>
 	<artifactId>football-bot</artifactId>
-	<version>0.0.7-SNAPSHOT</version>
+	<version>0.0.9-SNAPSHOT</version>
 	<name>football-bot</name>
 	<description>Football Bot</description>
 	<properties>

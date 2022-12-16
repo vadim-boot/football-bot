@@ -56,9 +56,7 @@ public class FootballBot extends TelegramLongPollingBot {
                 SendMessage message = new SendMessage();
                 message.setChatId(VADIM_CHAT_ID);
                 message.setText(matchServiceListDB.getMatches().stream()
-                        .map(m -> "id = " + m.getId()
-                                + "\ndesc = " + m.getDescription()
-                                + "\nbooking = " + m.isBooking())
+                        .map(Match::toShortString)
                         .collect(Collectors.joining("\n\n")));
                 try {
                     execute(message);

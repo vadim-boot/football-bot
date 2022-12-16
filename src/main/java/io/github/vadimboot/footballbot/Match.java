@@ -16,7 +16,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 @DynamoDbBean
-@Data @Builder @NoArgsConstructor @AllArgsConstructor
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Match {
     private String id;
     private LocalDate date;
@@ -37,5 +40,24 @@ public class Match {
     @DynamoDbAttribute("pk")
     public String getId() {
         return id;
+    }
+
+    public String toShortString() {
+        return "Match{" +
+                "id='" + id + '\'' +
+                ", date=" + date +
+                ", chatId='" + chatId + '\'' +
+                ", description='" + description + '\'' +
+                ", mainMsgId=" + mainMsgId +
+                ", playersLimit=" + playersLimit +
+                ", keepersLimit=" + keepersLimit +
+                ", numberOfTeams=" + numberOfTeams +
+                ", autoLimit=" + autoLimit +
+                ", cheat=" + cheat +
+                ", booking=" + booking +
+                ", readyPlayers=" + (readyPlayers != null ? readyPlayers.size() : "0") +
+                ", readyKeepers=" + (readyKeepers != null ? readyKeepers.size() : "0") +
+                ", skipPlayers=" + (skipPlayers != null ? skipPlayers.size() : "0") +
+                '}';
     }
 }
